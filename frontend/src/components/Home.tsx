@@ -14,7 +14,7 @@ const Home: React.FC = () => {
             </button>
             <p>Find your potential soul mates!!</p>
             <button className="btn">
-                <Link to="/matching">Cosmic connection</Link>
+                <Link to="/matching">Cosmic Connection</Link>
             </button>
         </div>
         </div>
