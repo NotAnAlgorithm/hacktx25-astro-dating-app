@@ -9,3 +9,42 @@ Future features will include: AI matches, AR integration to simulate a stellariu
 Tarot Card Images: https://jcanabal.itch.io/major-arcana-pixel-art-free
 
 Background GIF: https://stardust-specks.tumblr.com/post/164063487759/moonrise-inspired-by-the-lovely-artwork-of-8pxl
+
+
+# Cloning/Developing
+
+After cloning the repository, you need to set up 3 different servers: front end, back end, and PostgreSQL database.
+
+## Front End
+
+```sh
+cd frontend
+npm install
+
+# unoptimized developer build
+npm start
+
+# opimized production build
+npm run build
+sudo npm install -g serve
+serve -s build
+```
+
+## Back End
+
+```sh
+cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r python-packages.txt
+python manage.py runserver
+```
+
+## SQL
+
+> idk halp
+
+## Results!
+
+Open in the web browser `http://localhost:3000`!
+

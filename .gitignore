@@ -12,7 +12,7 @@ venv
 /coverage
 
 # production
-/build
+build
 
 __pycache__
 
