@@ -7,4 +7,5 @@ Future features will include: AI matches, AR integration to simulate a stellariu
 
 ## Asset Credits
 Tarot Card Images: https://jcanabal.itch.io/major-arcana-pixel-art-free
+
 Background GIF: https://stardust-specks.tumblr.com/post/164063487759/moonrise-inspired-by-the-lovely-artwork-of-8pxl
