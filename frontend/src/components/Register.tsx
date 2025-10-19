@@ -31,7 +31,7 @@ const Register: React.FC = () => {
                         required
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" className="btn">Login</button>
             </form>
         </div>
     );

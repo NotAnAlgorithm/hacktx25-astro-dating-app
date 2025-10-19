@@ -4,27 +4,13 @@ import {FlippableProfileCard, ProfileCard, TAROT_CARD} from "./Profile";
 const Galaxy: React.FC = () => {
     return (
         <div>
-            <h1>Your matches!</h1>
+            <h1>Your Matches</h1>
             <div className="profile-container">
-                {/*<div className="flip-card">*/}
-                {/*    <div className="flip-card-inner">*/}
-                {/*        <div className="flip-card-front">*/}
-                {/*            <ProfileCard person={{*/}
-                {/*                card_picture: TAROT_CARD.MAGICIAN,*/}
-                {/*            }}/>*/}
-                {/*        </div>*/}
-                {/*        <div className="flip-card-back">*/}
-                {/*            <h1>John Doe</h1>*/}
-                {/*            <p>Architect & Engineer</p>*/}
-                {/*            <p>We love that guy</p>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
                 <div>
                     <FlippableProfileCard person={{
                         name: "Mordecai Boon",
                         profile_picture: "n/a",
-                        card_picture: TAROT_CARD.LOVERS,
+                        card_picture: TAROT_CARD.MAGICIAN,
                         zodiac: "Taurus",
                         age: 25,
                         gender: "man",

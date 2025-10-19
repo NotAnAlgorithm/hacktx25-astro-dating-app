@@ -28,9 +28,9 @@ a {
     border: 3px solid lightblue;
     border-radius: 10px;
     transition: all 0.3s ease;
-    font-size: 24px;
+    font-size: 18px;
     font-family: "Trebuchet MS", serif;
-    color: beige;
+    color: black;
 }
 
 .chat-btn {
@@ -115,3 +115,4 @@ code {
     color: white;
     transform: rotateY(180deg);
 }
+

@@ -23,7 +23,7 @@ class Profile(models.Model):
         PISCES = 'PIS'
 
     # user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, related_name='user_id', on_delete=models.DO_NOTHING)  # idk what to do for delete thing
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)  # idk what to do for delete thing
     profile_picture = models.ImageField(upload_to='profile_pics/', blank=True)
     birth_date = models.DateField(null=True)
     zodiac = models.CharField(max_length=3, choices=ZodiacSign, blank=True)
@@ -39,15 +39,15 @@ class Profile(models.Model):
 
 
 class Preferences(models.Model):
-    user = models.ForeignKey(User, related_name='user_id', on_delete=models.CASCADE)
-    min_age = models.PositiveSmallIntegerField(max_length=3)
-    max_age = models.PositiveSmallIntegerField(max_length=3)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    min_age = models.PositiveSmallIntegerField()
+    max_age = models.PositiveSmallIntegerField()
     max_distance = models.PositiveSmallIntegerField() # in kilometers, max = 20,000
     gender = models.CharField(max_length=64, blank=True)
 
 
 class ProfileFeatures(models.Model):
-    user = models.ForeignKey(User, related_name='user_id', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     key = models.CharField(max_length=255, blank=True)
     value = models.TextField(blank=True)
 

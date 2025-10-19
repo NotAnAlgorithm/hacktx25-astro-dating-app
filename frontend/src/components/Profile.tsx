@@ -38,6 +38,33 @@ interface Person {
     bio: string;
 }
 
+function parsePerson(jsonData: any): Person {
+    // Ensure the data has the necessary properties before creating the object
+    const {
+        attraction,
+        bio,
+        birth_date,
+        gender,
+        id,
+        last_updated,
+        location,
+        profile_picture,
+        relationship,
+        user,
+        zodiac
+    } = jsonData;
+    return {
+        name: "",
+        profile_picture: profile_picture,
+        card_picture: "",
+        zodiac: zodiac,
+        age: 12,
+        gender: gender,
+        sexuality: attraction,
+        bio: bio
+    }
+}
+
 interface Front {
     frontBackgroundImage: string;
 }
@@ -126,10 +153,10 @@ const FlippableProfileCard: React.FC<FlippableProfileCardProps> = ({person, card
 }
 
 const MyProfile: React.FC = () => {
-    fetch('http://127.0.0.1:8000/api/profiles/')
-        .then(response => response.json())
-        .then(data => console.log(data));
-    const person: Person = {
+    // fetch('http://127.0.0.1:8000/api/profiles/')
+    //     .then(response => response.json())
+    //     .then(data => console.log(data));
+    let person: Person = {
         name: "Jane Doe",
         profile_picture: "n/a",
         card_picture: TAROT_CARD.LOVERS,
@@ -139,13 +166,31 @@ const MyProfile: React.FC = () => {
         sexuality: "GAY!",
         bio: "blah blah yap yap performative smth yap blah blah haskyasnyars :3",
     }
+    fetch('http://localhost:8000/api/profiles/?format=json', {})
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);  // Handle the response data here
+            person = parsePerson(data[0])
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
     return (
         <div>
             <h1>Your Profile</h1>
-            <ProfileCard person={person}/>
+            <div className="profile-container">
+                <FlippableProfileCard person={person} card_front={{
+                    frontBackgroundImage: TAROT_CARD.LOVERS,
+                }} />
+            </div>
         </div>
     );
-};
+}
 
 export default MyProfile;
 export {ProfileCard, FlippableProfileCard, TAROT_CARD};

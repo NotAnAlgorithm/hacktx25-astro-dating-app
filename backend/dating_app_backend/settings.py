@@ -28,6 +28,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # Your frontend's domain
+    'http://localhost:3001',  # Your frontend's domain
+    'http://10.155.106.160:3000',
+    'http://10.155.106.160:3001',
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [

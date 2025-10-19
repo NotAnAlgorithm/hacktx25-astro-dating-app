@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import Login from "./components/Login";
 import Matches from "./components/Matches";
 import Chat from "./components/Chat";
+import Register from "./components/Register";
 
 const App: React.FC = () => {
     return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/matching" element={<Matches />} />
                 <Route path="/chat" element ={<Chat />} />
+                <Route path="/register" element = {<Register />} />
             </Routes>
         </Router>
     );
