@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleRegister = (e: React.FormEvent) => {
         e.preventDefault();
         alert("Logging in...");
     };
 
     return (
         <div>
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
+            <h1>Sign Up</h1>
+            <form onSubmit={handleRegister}>
                 <div>
                     <label>Email:</label>
                     <input
@@ -31,13 +31,10 @@ const Login: React.FC = () => {
                         required
                     />
                 </div>
-                <button className = "btn" type="submit">Login</button>
-                <button className = "btn">
-                    <a href="/Register">Don't have an account? Register here!</a>
-                </button>
+                <button type="submit">Login</button>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default Register;
